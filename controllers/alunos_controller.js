@@ -1,4 +1,4 @@
-const Aluno = require("../schemas/aluno.js");
+const Aluno = require("../models/aluno.js.js");
 const { ObjectId } = require('mongodb');
 
 module.exports = router => {
