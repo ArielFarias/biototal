@@ -36,7 +36,7 @@ class Alunos extends React.Component {
   }
 
   getAluno = () => {
-    fetch("http://localhost:3001/api/alunos")
+    fetch("/api/alunos")
       .then(data => data.json())
       .then(res => this.setState({ alunos: res.data }));
   };
