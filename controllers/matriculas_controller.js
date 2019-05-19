@@ -1,4 +1,4 @@
-const Matricula = require("../models/matricula.js");
+const Matricula = require("../models/matricula");
 const { ObjectId } = require('mongodb');
 
 

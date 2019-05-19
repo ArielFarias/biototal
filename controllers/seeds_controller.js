@@ -1,6 +1,6 @@
-const Curso = require("../models/curso.js");
-const Aluno = require("../models/aluno.js");
-const Matricula = require("../models/matricula.js");
+const Curso = require("../models/curso");
+const Aluno = require("../models/aluno");
+const Matricula = require("../models/matricula");
 
 exports.initSeeds = (req, res) => {
   const portugues = new Curso({
