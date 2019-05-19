@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd backend && node server.js\" \"cd frontend && npm start\""
+    "start": "concurrently \"cd backend && node server.js\" \"cd frontend && npm start\"",
+    "heroku-postbuild": "cross-env NPM_CONFIG_PRODUCTION=true npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
   "author": "",
