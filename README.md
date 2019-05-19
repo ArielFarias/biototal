@@ -1,15 +1,11 @@
 # Test Biologia Total
 
-This appication was built with node.js (v10.15.1), express.js (v4.16.4)
+This appication was built with node.js (v10.15.3), express.js (v4.16.4)
 
 ## HEROKU DEPLOYMENT
 
-```bash
-
-visit: https://biologia-total.herokuapp.com/admin/alunos
-
-```
-
+    visit: https://biologia-total.herokuapp.com/admin/alunos
+    
 ## Installation guide
 
 Clone this repository at your current location:
@@ -19,7 +15,7 @@ Clone this repository at your current location:
 git clone https://github.com/ArielFarias/biototal.git
 
 # enter at the directory
-cd biologia-total
+cd biototal
 
 ```
 
@@ -71,7 +67,6 @@ npm start
 ```
 
 Open ```http://localhost:3000``` in your browser.
-
 
 ## Guides and Helpers
 

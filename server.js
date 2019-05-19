@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const path = require("path");
 
-const API_PORT = 3001;
 const app = express();
 app.use(cors());
 const router = express.Router();
@@ -37,14 +36,17 @@ require('./controllers/alunos_controller.js')(router);
 require('./controllers/cursos_controller.js')(router);
 require('./controllers/matriculas_controller.js')(router);
 
+app.use("/api", router);  
+
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("../frontend/build"))
+  app.use(express.static("/frontend/build"))
 
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
   })
 }
-app.use("/api", router);  
+
+const API_PORT = process.env.PORT || 3001;
 
 // launch our backend into a port
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
