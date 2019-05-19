@@ -33,9 +33,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
 
-require('./backend//controllers/alunos_controller.js')(router);
-require('./backend//controllers/cursos_controller.js')(router);
-require('./backend//controllers/matriculas_controller.js')(router);
+require('./controllers/alunos_controller.js')(router);
+require('./controllers/cursos_controller.js')(router);
+require('./controllers/matriculas_controller.js')(router);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("../frontend/build"))
