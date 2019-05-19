@@ -1,10 +1,6 @@
 # Test Biologia Total
 
 This appication was built with node.js (v10.15.3), express.js (v4.16.4)
-
-## HEROKU DEPLOYMENT
-
-    visit: https://biologia-total.herokuapp.com/admin/alunos
     
 ## Installation guide
 
@@ -82,3 +78,7 @@ lsof -i :3000
 
 kill -9 PID_OF_THE_PROCESS
 ```
+
+## Heroku Deployment
+
+    visit: https://biologia-total.herokuapp.com/admin/alunos
