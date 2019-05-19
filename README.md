@@ -78,7 +78,3 @@ lsof -i :3000
 
 kill -9 PID_OF_THE_PROCESS
 ```
-
-## Heroku Deployment
-
-    visit: https://biologia-total.herokuapp.com/admin/alunos
