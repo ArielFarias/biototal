@@ -1,4 +1,4 @@
-const Curso = require("../models/curso.js.js");
+const Curso = require("../models/curso.js");
 const { ObjectId } = require('mongodb');
 
 module.exports = router => {
