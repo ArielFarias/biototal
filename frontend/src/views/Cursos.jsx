@@ -34,13 +34,13 @@ class Cursos extends React.Component {
   }
 
   getCurso = () => {
-    fetch("/api/cursos")
+    fetch("http://localhost:3001/api/cursos")
     .then(data => data.json())
     .then(res => this.setState({ cursos: res.data }));
   };
   
     createCurso = () => {
-      axios.post("/api/curso", {
+      axios.post("http://localhost:3001/api/curso", {
         titulo: this.state.titulo,
         descricao: this.state.descricao
       }).then(() => this.getCurso());
@@ -57,7 +57,7 @@ class Cursos extends React.Component {
 
   updateCurso = id => {
     const updatedCurso = this.state.cursos.find(curso => curso._id === id);
-    axios.post(`/api/updateCurso/${id}`, {
+    axios.post(`http://localhost:3001/api/updateCurso/${id}`, {
       id,
       update: {
         titulo: updatedCurso.titulo,
@@ -67,7 +67,7 @@ class Cursos extends React.Component {
   };
 
   deleteCurso = id => {
-    axios.delete(`/api/curso/${id}`, {
+    axios.delete(`http://localhost:3001/api/curso/${id}`, {
       data: {
         id
       }

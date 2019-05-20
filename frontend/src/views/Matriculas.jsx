@@ -29,10 +29,10 @@ class Matriculas extends React.Component {
 
   componentDidMount() {
     this.getMatricula();
-    fetch("/api/alunos")
+    fetch("http://localhost:3001/api/alunos")
       .then(data => data.json())
       .then(res => this.setState({ alunos: res.data }));
-    fetch("/api/cursos")
+    fetch("http://localhost:3001/api/cursos")
       .then(data => data.json())
       .then(res => this.setState({ cursos: res.data }));
     if (!this.state.intervalIsSet) {
@@ -42,14 +42,14 @@ class Matriculas extends React.Component {
   }
   
   createMatricula = () => {
-    axios.post("/api/matricula", {
+    axios.post("http://localhost:3001/api/matricula", {
       curso: this.state.curso.value,
       aluno: this.state.aluno.value
     }).then(() => this.getMatricula());
   };
   
   getMatricula = () => {
-    fetch("/api/matriculas")
+    fetch("http://localhost:3001/api/matriculas")
       .then(data => data.json())
       .then(res => this.setState({ matriculas: res.data }));
   };
@@ -67,7 +67,7 @@ class Matriculas extends React.Component {
     const updatedMatricula = this.state.matriculas.find(
       matricula => matricula._id === id
     );
-    axios.post(`/api/updateMatricula/${id}`, {
+    axios.post(`http://localhost:3001/api/updateMatricula/${id}`, {
       id,
       update: {
         aluno: updatedMatricula.aluno,
@@ -77,7 +77,7 @@ class Matriculas extends React.Component {
   };
 
   deleteMatricula = id => {
-    axios.delete(`/api/matricula/${id}`, {
+    axios.delete(`http://localhost:3001/api/matricula/${id}`, {
       data: {
         id
       }

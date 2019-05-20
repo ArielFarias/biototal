@@ -4,17 +4,14 @@ This appication was built with node.js (v10.15.3), express.js (v4.16.4)
     
 ## Installation guide
 
-Clone this repository at your current location:
+Clone the repository
 
 ```bash
 
-git clone https://github.com/ArielFarias/biototal.git
-
-# enter at the directory
-cd biototal
+$ git clone https://github.com/ArielFarias/biototal.git
+$ cd biototal
 
 ```
-
 > IMPORTANT: The following steps must be done inside the directory.
 
 ### Linux
@@ -27,14 +24,14 @@ If your linux is based on Debian (e.g. Ubuntu, Mint), follow the instructions wi
 
 ```bash
 
-sudo apt install curl
+$ sudo apt install curl
 
-curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+$ curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
 
-sudo apt install nodejs
+$ sudo apt install nodejs
 
 # check node version
-node --version
+$ node --version
 
 ```
 
@@ -43,38 +40,36 @@ node --version
 ```bash
 
 # install server dependencies
-npm install
+$ npm install
 
 # install client dependencies
-cd frontend && npm install
+$ cd frontend && npm install
 
 ```
 
-## Running the application
+## Run
+
+> IMPORTANT: In order to run you need to be in the project root folder.
 
 ```bash
 
-# after frontend deps instalation, go back to the main folder :
-cd ..
-
-# then run the server using:
-npm start
+$ npm start
 
 ```
 
 Open ```http://localhost:3000``` in your browser.
 
-## Guides and Helpers
+## Troubleshooting
 
-### node installation page
-https://nodejs.org/en/download/
-
-### Occupied port
-If node throws an error telling the port ```3000``` is already been used, end the processes:
+### Clear PORT 3000
+If you receive an error when trying to run the app as: port ```3000``` is already been used, you need to kill the process.
 
 ```bash
 # list processes running at port 3000
 lsof -i :3000
 
-kill -9 PID_OF_THE_PROCESS
+fuser -k 3000/tcp
 ```
+### Node Installation Page
+https://nodejs.org/en/download/
+
